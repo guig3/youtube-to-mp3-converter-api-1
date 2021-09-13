@@ -8,12 +8,12 @@ Here is a simple auto responsive[For All Devices] iframe code to easily embed to
 
 MP3 Converter API Code:
 
-```<iframe src="https://api.vevioz.com/@api/button/videos/kTJczUoc26U" style="width:100%;height:300px;border:none;"" scrolling="no"></iframe>```
+```<iframe src="https://api.tubemp3.biz/video/kTJczUoc26U" style="width:100%;height:300px;border:none;"" scrolling="no"></iframe>```
 
 MP4, WEbM, 3Gp & Flv Video Converter API Code:
 
-```<iframe src="https://www.yt-download.org/api/button/videos/YouTube-Video-ID" width="100%" height="100px" scrolling="no" style="border:none;"></iframe>```
+```<iframe src="https://api.tubemp3.biz/video/YouTube-Video-ID" width="100%" height="100px" scrolling="no" style="border:none;"></iframe>```
 
 Please replace YouTube-Video-ID with dynamic video id value.
 
-For button customization please access https://api.vevioz.com
+For button customization please access https://api.tubemp3.biz/
