@@ -1,19 +1,78 @@
-# Super Fast YouTube to MP3/MP4 Converter API
+# YouTube to MP3 & MP4 Developer APIs
+If you are a Web Developer and looking for a Video Downloader API for your projects then you are at the right place. We offer super fast iFrame converter APIs to allow you to download videos without using your server resources. Our APIs work with any programming language like PHP, Python, JavaScript, jQuery, Ajax, JSON, Node.JS, Swift, C#, Java, Android, & iOS.
 
-A simple way to convert Youtube videos to mp3/mp4 using API service. Get quality like 320 kbps, 256 kbps, 192 kbps, 128 kbps mp3 format for all devices.
+Our API supports video platforms like YouTube. Try our YouTube to MP3 API.
 
-Conversion is instant even in seconds for hours lenght videos no wait.
+## Single Button API
 
-Here is a simple auto responsive[For All Devices] iframe code to easily embed to your websites and enjoy best ever converter for free.
+**GET** `https://apiyt.cc/{FTYPE}/{VIDEO_ID}`
 
-MP3 Converter API Code:
+**Parameters:**
 
-```<iframe src="https://api.tubemp3.biz/mp3/kTJczUoc26U" frameborder="0" style="width: 160px; height: 60px;"></iframe>```
+**FTYPE:** `mp3` or `mp4`
 
-MP4 API Code:
+**VIDEO_ID:** https://www.youtube.com/watch?v= `pRpeEdMmmQ0`
 
-```<iframe src="https://api.tubemp3.biz/video/kTJczUoc26U" frameborder="0" style="width: 160px; height: 60px;"></iframe>```
+MP3/MP4 iFrame Code:
+```
+<iframe src="https://apiyt.cc/mp3/pRpeEdMmmQ0" style="width: 160px; height: 60px;" width="100%" height="100%"
+allowtransparency="true" scrolling="no" style="border:none"></iframe>
+```
+**Generates this:**
 
-Please replace YouTube-Video-ID with dynamic video id value.
+![MP3 button / Music Download](https://apiyt.cc/assets/images/mp3.png)
+![MP4 button / Video Download](https://apiyt.cc/assets/images/mp4.png)
 
-For button customization please access https://api.tubemp3.biz
+
+## Widget API
+
+**GET** `https://apiyt.cc/{FTYPE}/{VIDEO_ID}`
+
+**Parameters:**
+
+**FTYPE:** `widget`
+
+**VIDEO_ID:** https://www.youtube.com/watch?v= `pRpeEdMmmQ0`
+
+iFrame Code:
+```
+<iframe id="buttonApi" src="https://apiyt.cc/widget/pRpeEdMmmQ0" width="100%" height="100%"
+allowtransparency="true" scrolling="no" style="border:none;overflow:hidden;height: 300px;width: 100%;"></iframe>
+
+```
+Javascript code for automatic (Responsive) resizing:
+```
+<!-- Put the Library in your <head> tag -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+
+<!-- Put the resizer code after the <iframe> tag -->
+<script>iFrameResize({ log: false }, '#widgetApi')</script>
+```
+**Generates this:**
+
+![Multi buttons / Music and Video Download](https://apiyt.cc/assets/images/widgets.png)
+
+## Search API
+
+**GET** `https://apiyt.cc/{FTYPE}/{QUERY}`
+
+**Parameters:**
+
+**FTYPE:** `search`
+
+**QUERY:** Post Malone
+
+iFrame Code:
+```
+<iframe id="SearchApi" src="https://apiyt.cc/search/post+malone" width="100%" height="530" allowtransparency="true" style="border:none"></iframe>
+```
+**Generates this:**
+
+![Search Video](https://apiyt.cc/assets/images/search.png)
+
+
+**Official API Websites:** https://apiyt.cc/
+
+**Demo:** https://TubeMp3.biz `or` https://TubeMp3.websiteseguro.com
+
+**More demo:** https://youtubeconversor1.websiteseguro.com `or` https://youtubefastmp31.websiteseguro.com/
