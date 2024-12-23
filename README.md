@@ -1,78 +1,168 @@
-# YouTube to MP3 & MP4 Developer APIs
-If you are a Web Developer and looking for a Video Downloader API for your projects then you are at the right place. We offer super fast iFrame converter APIs to allow you to download videos without using your server resources. Our APIs work with any programming language like PHP, Python, JavaScript, jQuery, Ajax, JSON, Node.JS, Swift, C#, Java, Android, & iOS.
+# **YouTube to MP3 API Documentation**
 
-Our API supports video platforms like YouTube. Try our YouTube to MP3 API.
+**Base URL**:<br> `https://tube-mp31.p.rapidapi.com/`
 
-## Single Button API
+## **Endpoints**
+Converts a YouTube video to MP3 format and provides a direct download 
 
-**GET** `https://apiyt.cc/{FTYPE}/{VIDEO_ID}`
+**METHOD POST** `https://tube-mp31.p.rapidapi.com/json`<br><br>
 
-**Parameters:**
+## **Request**<br>
 
-**FTYPE:** `mp3` or `mp4`
-
-**VIDEO_ID:** https://www.youtube.com/watch?v= `pRpeEdMmmQ0`
-
-MP3/MP4 iFrame Code:
-```
-<iframe src="https://apiyt.cc/mp3/pRpeEdMmmQ0" style="width: 160px; height: 60px;" width="100%" height="100%"
-allowtransparency="true" scrolling="no" style="border:none"></iframe>
-```
-**Generates this:**
-
-![MP3 button / Music Download](https://apiyt.cc/assets/images/mp3.png)
-![MP4 button / Video Download](https://apiyt.cc/assets/images/mp4.png)
-
-
-## Widget API
-
-**GET** `https://apiyt.cc/{FTYPE}/{VIDEO_ID}`
-
-**Parameters:**
-
-**FTYPE:** `widget`
-
-**VIDEO_ID:** https://www.youtube.com/watch?v= `pRpeEdMmmQ0`
-
-iFrame Code:
-```
-<iframe id="buttonApi" src="https://apiyt.cc/widget/pRpeEdMmmQ0" width="100%" height="100%"
-allowtransparency="true" scrolling="no" style="border:none;overflow:hidden;height: 300px;width: 100%;"></iframe>
+###  Headers
 
 ```
-Javascript code for automatic (Responsive) resizing:
+{
+  "Content-Type": "application/json"
+}
 ```
-<!-- Put the Library in your <head> tag -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
 
-<!-- Put the resizer code after the <iframe> tag -->
-<script>iFrameResize({ log: false }, '#widgetApi')</script>
+###  Body Parameters<br>
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>videoId</td>
+            <td>string</td>
+            <td>Yes</td>
+            <td>The YouTube video ID to be converted.</td>
+        </tr>
+    </tbody>
+</table>
+
+### Example Request Body
+
 ```
-**Generates this:**
-
-![Multi buttons / Music and Video Download](https://apiyt.cc/assets/images/widgets.png)
-
-## Search API
-
-**GET** `https://apiyt.cc/{FTYPE}/{QUERY}`
-
-**Parameters:**
-
-**FTYPE:** `search`
-
-**QUERY:** Post Malone
-
-iFrame Code:
+{
+  "videoId": "K4xl1T_lyiM"
+}
 ```
-<iframe id="SearchApi" src="https://apiyt.cc/search/post+malone" width="100%" height="530" allowtransparency="true" style="border:none"></iframe>
+
+
+
+<br>
+
+##  **Response**
+
+### Success Response<br>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>status</td>
+            <td>string</td>
+            <td>Status of the request (success).</td>
+        </tr>
+        <tr>
+            <td>response</td>
+            <td>string</td>
+            <td>Direct download URL for the converted MP3.</td>
+        </tr>
+    </tbody>
+</table>
+
+- **Example Success Response**<br>
+
 ```
-**Generates this:**
+{
+  "status": "success",
+  "result": [
+    {
+      "videoId": "Video ID",
+      "title": "Artist - Song Name",
+      "author": "Author",
+      "duration": 167,
+      "dlurl": "https://example.com/downloads/audio.mp3",
+      "token": "JTdCJTIyaWQlMjIlM0ElMjIxa0FudTdWaXI...."
+    }
+  ]
+}
+```
+<br>
 
-![Search Video](https://apiyt.cc/assets/images/search.png)
+### Error Responses<br>
+<table>
+    <thead>
+        <tr>
+            <th>Response</th>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Error Response</td>
+            <td>error</td>
+            <td>string</td>
+            <td>Error message if the request fails.</td>
+        </tr>
+    </tbody>
+</table>
+
+- **Example Error Response (Missing videoId)**<br>
+
+```
+{
+  "error": "\"videoId\" parameter is mandatory."
+}
+```
+
+- **Example Error Response (Method Not Allowed)**<br>
+
+```
+{
+  "error": "Method not permitted."
+}
+```
+
+<br>
+
+-----------
+
+### **Rate Limiting**
+
+- **Request Limit**: 100 requests per minute.
+- **Status Code:** 429 Too Many Requests is returned when the limit is exceeded.
 
 
-**Official API Websites:** https://apiyt.cc/
+-----------
 
-**Demo:** https://TubeMp3.biz `or` https://TubeMp3.websiteseguro.com
+### **Error Handling**
 
-**More demo:** https://youtubeconversor1.websiteseguro.com `or` https://youtubefastmp31.websiteseguro.com/
+- 400 Bad Request: Returned if the videoId parameter is missing or invalid.
+- 405 Method Not Allowed: Returned if a method other than POST is used.
+- 500 Internal Server Error: Indicates a server-side issue.
+
+
+-----------
+
+### **Features**
+- Converts YouTube videos to MP3 format effortlessly.
+- Provides direct download links for easy integration.
+- Supports high-quality audio conversion.
+
+
+-----------
+
+### **Contact and Support**
+For assistance, feel free to reach out to our support team at support@tubemp3.net.
+
+Enjoy building with the **YouTube to MP3 API**! 🚀
+
+<p>
+<a href="https://apiyt.cc" target="_blank">https://apiyt.cc</a> or <a href="https://TubeMp3.net" target="_blank">https://TubeMp3.net</a>
+</p>
