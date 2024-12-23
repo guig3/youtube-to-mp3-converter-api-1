@@ -1,7 +1,7 @@
 # **YouTube to MP3 API Documentation**
 
 The **YouTube to MP3 API** allows for quick and easy conversion of YouTube videos into high-quality MP3 audio files. Through direct integration, you can obtain the MP3 download link for the desired video with just one API call.
-Check out our API at <a href="[https://apiyt.cc](https://rapidapi.com/tubemp3-tubemp3-default/api/tube-mp31)" target="_blank">RapidAPI</a> 
+Check out our API at <a href="https://rapidapi.com/tubemp3-tubemp3-default/api/tube-mp31" target="_blank">RapidAPI https://rapidapi.com/tubemp3-tubemp3-default/api/tube-mp31</a> 
 
 **Base URL**:<br> `https://tube-mp31.p.rapidapi.com/`
 
@@ -160,9 +160,6 @@ Converts a YouTube video to MP3 format and provides a direct download
 
 
 -----------
-
-### **Contact and Support**
-For assistance, feel free to reach out to our support team at support@tubemp3.net.
 
 Enjoy building with the **YouTube to MP3 API**! 🚀
 
